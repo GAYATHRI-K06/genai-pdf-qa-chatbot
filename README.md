@@ -7,11 +7,16 @@ To design and implement a question-answering chatbot capable of processing and e
 Design an LCEL pipeline using LangChain with at least two dynamic prompt parameters. Integrate prompt, model, and output parser components to form a complete expression. Evaluate its functionality through real-world query-response scenarios.
 
 ## DESIGN STEPS:
-**STEP 1:** Setup API and Environment: Load environment variables using dotenv and set openai.api_key from the local environment.
-**STEP 2:** Create Prompt and Model: Use LangChain to define a ChatPromptTemplate and initialize ChatOpenAI for text generation.
-**STEP 3:** Build a Retrieval System: Store predefined texts in DocArrayInMemorySearch with OpenAIEmbeddings and create a retriever.
-**STEP 4:** Define Question-Answering Chain: Use RunnableMap to fetch relevant documents and pass them to a chat model for responses.
-**STEP 5:** Invoke the Chain: Run chain.invoke() with a question to retrieve context-based answers using the LangChain pipeline.
+**STEP 1:** 
+Setup API and Environment: Load environment variables using dotenv and set openai.api_key from the local environment.
+**STEP 2:** 
+Create Prompt and Model: Use LangChain to define a ChatPromptTemplate and initialize ChatOpenAI for text generation.
+**STEP 3:** 
+Build a Retrieval System: Store predefined texts in DocArrayInMemorySearch with OpenAIEmbeddings and create a retriever.
+**STEP 4:** 
+Define Question-Answering Chain: Use RunnableMap to fetch relevant documents and pass them to a chat model for responses.
+**STEP 5:** 
+Invoke the Chain: Run chain.invoke() with a question to retrieve context-based answers using the LangChain pipeline.
 
 ### PROGRAM:
 ````
