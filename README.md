@@ -111,7 +111,7 @@ result['answer']
 ### OUTPUT:
 <img width="673" height="346" alt="image" src="https://github.com/user-attachments/assets/539e159b-3e0e-41ad-abc4-f66987eb8ddd" />
 <img width="899" height="144" alt="image" src="https://github.com/user-attachments/assets/b36ef4f5-1303-4ae7-8fd2-2cf6c4f33c72" />
-<img width="870" height="84" alt="image" src="https://github.com/user-attachments/assets/d5c08a76-7554-44c4-8467-f5fbafd03ade" />
+
 <img width="890" height="346" alt="image" src="https://github.com/user-attachments/assets/9dbd285f-1527-403f-b4a4-69459d18e0a2" />
 
 
