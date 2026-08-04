@@ -7,16 +7,14 @@ To design and implement a question-answering chatbot capable of processing and e
 Design an LCEL pipeline using LangChain with at least two dynamic prompt parameters. Integrate prompt, model, and output parser components to form a complete expression. Evaluate its functionality through real-world query-response scenarios.
 
 ## DESIGN STEPS:
-**STEP 1:** 
-Setup API and Environment: Load environment variables using dotenv and set openai.api_key from the local environment.
-**STEP 2:** 
-Create Prompt and Model: Use LangChain to define a ChatPromptTemplate and initialize ChatOpenAI for text generation.
-**STEP 3:** 
-Build a Retrieval System: Store predefined texts in DocArrayInMemorySearch with OpenAIEmbeddings and create a retriever.
-**STEP 4:** 
-Define Question-Answering Chain: Use RunnableMap to fetch relevant documents and pass them to a chat model for responses.
-**STEP 5:** 
-Invoke the Chain: Run chain.invoke() with a question to retrieve context-based answers using the LangChain pipeline.
+#### STEP 1:
+Install the required libraries (`langchain`, `langchain-core`, `langchain-google-genai`, `google-generativeai`) and configure the Google Gemini API key. Initialize the `ChatGoogleGenerativeAI` model with `gemini-2.0-flash` as the base LLM shared across all experiments.
+
+#### STEP 2:
+Design the three core LCEL components — (1) `ChatPromptTemplate` with at least two named parameters such as `{topic}` and `{level}`, (2) the Gemini language model, and (3) an output parser (`StrOutputParser` or `JsonOutputParser`). Connect them using the LCEL pipe operator: `chain = prompt | model | output_parser`.
+
+#### STEP 3:
+Invoke the chain using `.invoke()` for single inputs, `.batch()` for parallel multiple inputs, and `.stream()` for real-time token-by-token output. Apply the chain across six experiments: basic explanation, structured JSON output, customer support bot, code review assistant, batch quiz generation, and streaming story generation.
 
 ### PROGRAM:
 ````
