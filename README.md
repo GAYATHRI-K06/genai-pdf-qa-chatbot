@@ -7,15 +7,18 @@ To design and implement a question-answering chatbot capable of processing and e
 Design an LCEL pipeline using LangChain with at least two dynamic prompt parameters. Integrate prompt, model, and output parser components to form a complete expression. Evaluate its functionality through real-world query-response scenarios.
 
 ## DESIGN STEPS:
-#### STEP 1:
-Install the required libraries (`langchain`, `langchain-core`, `langchain-google-genai`, `google-generativeai`) and configure the Google Gemini API key. Initialize the `ChatGoogleGenerativeAI` model with `gemini-2.0-flash` as the base LLM shared across all experiments.
 
-#### STEP 2:
-Design the three core LCEL components — (1) `ChatPromptTemplate` with at least two named parameters such as `{topic}` and `{level}`, (2) the Gemini language model, and (3) an output parser (`StrOutputParser` or `JsonOutputParser`). Connect them using the LCEL pipe operator: `chain = prompt | model | output_parser`.
+**STEP 1:** Import the required LangChain libraries, OpenAI modules, embedding models, prompt templates, output parsers, and environment configuration packages.
 
-#### STEP 3:
-Invoke the chain using `.invoke()` for single inputs, `.batch()` for parallel multiple inputs, and `.stream()` for real-time token-by-token output. Apply the chain across six experiments: basic explanation, structured JSON output, customer support bot, code review assistant, batch quiz generation, and streaming story generation.
+**STEP 2:** Configure the OpenAI API key and initialize the ChatOpenAI model for generating responses from user inputs.
 
+**STEP 3:** Create simple and complex chains by connecting prompt templates, LLM models, output parsers, and multiple processing steps using LangChain Expression Language (LCEL).
+
+**STEP 4:** Create a vector store using document embeddings and store the given information using DocArrayInMemorySearch for efficient retrieval.
+
+**STEP 5:** Configure a retriever and integrate it with prompt templates and the LLM to create a Retrieval-Augmented Generation (RAG) chain.
+
+**STEP 6:** Execute the chains with different inputs, retrieve relevant information, process the queries using the LLM, and display the generated responses.
 ### PROGRAM:
 ````
 import os
